@@ -1,0 +1,160 @@
+/* Algemene stijlen */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom, #001f3f, #001529);
+    color: #fff;
+}
+
+header {
+    background-color: rgba(0, 31, 63, 0.9);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+    position: relative;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffdc00;
+}
+
+main {
+    margin-top: 100px;
+    padding: 20px;
+    animation: fadeIn 1s ease-in;
+}
+
+section h1, section h2 {
+    text-align: center;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+section button, footer button {
+    display: block;
+    margin: 20px auto;
+    padding: 15px 30px;
+    background-color: #ffdc00;
+    color: #001f3f;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+section button:hover, footer button:hover {
+    background-color: #ff851b;
+}
+
+.info-block {
+    background-color: rgba(0, 31, 63, 0.8);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transform: scale(0.9);
+    transition: transform 0.3s;
+}
+
+.info-block:hover {
+    transform: scale(1);
+}
+
+.discovery, .achievement-summary {
+    background-color: rgba(0, 47, 75, 0.8);
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 15px;
+    max-width: 800px;
+    animation: slideInLeft 1s ease-in-out;
+}
+
+aside {
+    background-color: rgba(0, 31, 63, 0.8);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 15px;
+}
+
+aside ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+aside ul li {
+    margin: 10px 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+aside ul li::before {
+    content: '★';
+    position: absolute;
+    left: 0;
+    color: #ffdc00;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 31, 63, 0.9);
+}
+
+footer small {
+    display: block;
+    margin-top: 10px;
+    color: #ccc;
+}
+
+/* Animaties */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-100%); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsiviteit */
+@media (min-width: 768px) {
+    nav ul {
+        justify-content: flex-start;
+        padding-left: 50px;
+    }
+
+    .info-blocks {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .info-block {
+        flex: 1;
+        margin: 20px;
+    }
+}
+
