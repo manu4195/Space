@@ -1,13 +1,24 @@
+/* Definieer kleurpalet */
+:root {
+    --primary-color: #2C3E50;     /* Donkerblauw */
+    --secondary-color: #18BC9C;   /* Turkoois */
+    --accent-color: #F39C12;      /* Oranje */
+    --background-color: #ECF0F1;  /* Lichtgrijs */
+    --text-color: #2C3E50;        /* Donkerblauw */
+    --nav-text-color: #FFFFFF;    /* Wit */
+}
+
 /* Algemene stijlen */
 body {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to bottom, #001f3f, #001529);
-    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
 }
 
+/* Navigatiebalk */
 header {
-    background-color: rgba(0, 31, 63, 0.9);
+    background-color: var(--primary-color);
     position: fixed;
     width: 100%;
     top: 0;
@@ -17,86 +28,178 @@ header {
 nav ul {
     list-style-type: none;
     margin: 0;
-    padding: 20px;
+    padding: 15px 30px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 nav ul li {
-    margin: 0 15px;
-    position: relative;
+    margin: 0 20px;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #fff;
+    color: var(--nav-text-color);
     font-size: 18px;
-    transition: color 0.3s;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: var(--accent-color);
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
 }
 
 nav ul li a:hover {
-    color: #ffdc00;
+    color: var(--accent-color);
 }
 
+/* Hoofdsectie */
 main {
-    margin-top: 100px;
-    padding: 20px;
-    animation: fadeIn 1s ease-in;
+    margin-top: 80px;
+    padding: 40px 20px;
 }
 
-section h1, section h2 {
+/* Hero Sectie */
+.hero {
     text-align: center;
+    background-image: url('ruimte.jpg'); /* Voeg je eigen achtergrondafbeelding toe */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
 }
 
-section {
-    margin-bottom: 50px;
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(44, 62, 80, 0.7);
 }
 
-section button, footer button {
-    display: block;
-    margin: 20px auto;
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero button {
     padding: 15px 30px;
-    background-color: #ffdc00;
-    color: #001f3f;
+    background-color: var(--accent-color);
+    color: #fff;
     border: none;
-    border-radius: 25px;
-    font-size: 16px;
+    border-radius: 50px;
+    font-size: 18px;
     cursor: pointer;
+    position: relative;
+    z-index: 1;
     transition: background-color 0.3s;
 }
 
-section button:hover, footer button:hover {
-    background-color: #ff851b;
+.hero button:hover {
+    background-color: darken(var(--accent-color), 10%);
 }
 
-.info-block {
-    background-color: rgba(0, 31, 63, 0.8);
+/* Info Blokken */
+.info-blokken {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: -50px;
+}
+
+.info-blok {
+    background-color: #fff;
+    color: var(--text-color);
     padding: 20px;
     margin: 20px;
     border-radius: 15px;
     text-align: center;
-    transform: scale(0.9);
+    flex: 1 1 300px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: transform 0.3s;
 }
 
-.info-block:hover {
-    transform: scale(1);
+.info-blok:hover {
+    transform: translateY(-10px);
 }
 
-.discovery, .achievement-summary {
-    background-color: rgba(0, 47, 75, 0.8);
-    padding: 20px;
+.info-blok h2 {
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+.info-blok p {
+    font-size: 16px;
+}
+
+/* Laatste Ontdekkingen */
+.ontdekkingen {
+    margin-top: 60px;
+}
+
+.ontdekkingen h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+}
+
+.ontdekking, .prestatie-samenvatting {
+    background-color: #fff;
+    color: var(--text-color);
+    padding: 30px;
     margin: 20px auto;
     border-radius: 15px;
     max-width: 800px;
-    animation: slideInLeft 1s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
+.ontdekking::before, .prestatie-samenvatting::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background-color: var(--accent-color);
+    top: 0;
+    left: 0;
+}
+
+/* Zijbalk */
 aside {
-    background-color: rgba(0, 31, 63, 0.8);
-    padding: 20px;
-    margin: 20px;
+    background-color: var(--secondary-color);
+    color: #fff;
+    padding: 30px;
+    margin: 60px 20px 20px 20px;
     border-radius: 15px;
+}
+
+aside h2 {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 aside ul {
@@ -105,56 +208,67 @@ aside ul {
 }
 
 aside ul li {
-    margin: 10px 0;
+    margin: 15px 0;
+    font-size: 18px;
     position: relative;
-    padding-left: 20px;
+    padding-left: 25px;
 }
 
 aside ul li::before {
-    content: '★';
+    content: '🌟';
     position: absolute;
     left: 0;
-    color: #ffdc00;
 }
 
+/* Footer */
 footer {
     text-align: center;
-    padding: 20px;
-    background-color: rgba(0, 31, 63, 0.9);
+    padding: 30px 20px;
+    background-color: var(--primary-color);
+    color: #fff;
+    margin-top: 60px;
+}
+
+footer button {
+    margin-bottom: 20px;
 }
 
 footer small {
     display: block;
-    margin-top: 10px;
     color: #ccc;
 }
 
 /* Animaties */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes slideInLeft {
-    from { opacity: 0; transform: translateX(-100%); }
-    to { opacity: 1; transform: translateX(0); }
+.ontdekking, .prestatie-samenvatting, .info-blok, .hero {
+    animation: fadeInUp 1s ease-in-out;
 }
 
 /* Responsiviteit */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     nav ul {
-        justify-content: flex-start;
-        padding-left: 50px;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .info-blocks {
-        display: flex;
-        justify-content: space-around;
+    nav ul li {
+        margin: 10px 0;
     }
 
-    .info-block {
-        flex: 1;
-        margin: 20px;
+    .info-blokken {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero {
+        padding: 80px 20px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
     }
 }
-
