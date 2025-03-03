@@ -1,0 +1,362 @@
+/* Definieer algemene animatie voor achtergronden */
+@keyframes gradientAnimatie {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Algemene stijlen */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    position: relative; /* Toegevoegd voor stacking context */
+    z-index: 1;         /* Toegevoegd om achtergrond achter content te plaatsen */
+}
+
+/* Kleurpaletten en achtergronden per planeet */
+body.mercurius {
+    --primair: #9E9E9E;
+    --secundair: #BDBDBD;
+    --accent: #757575;
+    --achtergrond: #F5F5F5;
+    --tekst: #212121;
+    background: linear-gradient(45deg, var(--primair), var(--secundair));
+    background-size: 400% 400%;
+    animation: gradientAnimatie 20s infinite;
+}
+
+body.venus {
+    --primair: #FFC107;
+    --secundair: #FFD54F;
+    --accent: #FFA000;
+    --achtergrond: #FFF8E1;
+    --tekst: #4E342E;
+    background: linear-gradient(45deg, var(--primair), var(--secundair));
+    background-size: 400% 400%;
+    animation: gradientAnimatie 20s infinite;
+}
+
+body.aarde {
+    --primair: #2196F3;
+    --secundair: #64B5F6;
+    --accent: #1976D2;
+    --achtergrond: #E3F2FD;
+    --tekst: #0D47A1;
+    background: linear-gradient(45deg, var(--primair), var(--secundair));
+    background-size: 400% 400%;
+    animation: gradientAnimatie 20s infinite;
+}
+
+body.mars {
+    --primair: #D32F2F;
+    --secundair: #E57373;
+    --accent: #C62828;
+    --achtergrond: #FFEBEE;
+    --tekst: #B71C1C;
+    background: linear-gradient(45deg, var(--primair), var(--secundair));
+    background-size: 400% 400%;
+    animation: gradientAnimatie 20s infinite;
+}
+
+body.jupiter {
+    --primair: #8D6E63;
+    --secundair: #BCAAA4;
+    --accent: #6D4C41;
+    --achtergrond: #EFEBE9;
+    --tekst: #3E2723;
+    background: linear-gradient(45deg, var(--primair), var(--secundair));
+    background-size: 400% 400%;
+    animation: gradientAnimatie 20s infinite;
+}
+
+/* Algemene elementen met variabelen */
+header {
+    background-color: var(--primair);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Blijft bovenaan */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background-color: var(--accent);
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: var(--accent);
+}
+
+main {
+    margin-top: 80px;
+    padding: 40px 20px;
+    color: var(--tekst);
+    position: relative; /* Toegevoegd */
+    z-index: 2;         /* Zorgt dat main boven de achtergrond komt */
+}
+
+section h1, section h2, aside h2 {
+    text-align: center;
+    color: var(--primair);
+}
+
+section h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+section h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+section p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+}
+
+button {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 15px 30px;
+    background-color: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: darken(var(--accent), 10%);
+}
+
+.info-blokken {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: -50px;
+    position: relative; /* Toegevoegd */
+    z-index: 2;         /* Zorgt dat info-blokken boven de achtergrond komen */
+}
+
+.info-blok {
+    background-color: #fff;
+    color: var(--tekst);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 15px;
+    text-align: center;
+    flex: 1 1 300px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    position: relative; /* Toegevoegd */
+    z-index: 2;         /* Zorgt dat info-blok boven de achtergrond komt */
+}
+
+.info-blok:hover {
+    transform: translateY(-10px);
+}
+
+.info-blok h2 {
+    margin-bottom: 15px;
+    color: var(--secundair);
+}
+
+.info-blok p {
+    font-size: 16px;
+}
+
+.ontdekkingen {
+    margin-top: 60px;
+    position: relative; /* Toegevoegd */
+    z-index: 2;         /* Zorgt dat ontdekkingen boven de achtergrond komen */
+}
+
+.ontdekking, .prestatie-samenvatting {
+    background-color: #fff;
+    color: var(--tekst);
+    padding: 30px;
+    margin: 20px auto;
+    border-radius: 15px;
+    max-width: 800px;
+    position: relative; /* Toegevoegd */
+    z-index: 2;         /* Zorgt dat deze elementen boven de achtergrond komen */
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.ontdekking::before, .prestatie-samenvatting::before {
+    content: '';
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background-color: var(--accent);
+    top: 0;
+    left: 0;
+}
+
+aside {
+    background-color: var(--secundair);
+    color: #fff;
+    padding: 30px;
+    margin: 60px 20px 20px 20px;
+    border-radius: 15px;
+    position: relative; /* Toegevoegd */
+    z-index: 2;         /* Zorgt dat aside boven de achtergrond komt */
+}
+
+aside h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+aside ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+aside ul li {
+    margin: 15px 0;
+    font-size: 18px;
+    position: relative;
+    padding-left: 25px;
+}
+
+aside ul li::before {
+    content: '🌟';
+    position: absolute;
+    left: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: var(--primair);
+    color: #fff;
+    margin-top: 60px;
+    position: relative; /* Toegevoegd */
+    z-index: 2;         /* Zorgt dat footer boven de achtergrond komt */
+}
+
+footer button {
+    margin-bottom: 20px;
+}
+
+footer small {
+    display: block;
+    color: #ccc;
+}
+
+/* Hero Sectie met specifieke animaties per planeet */
+.hero {
+    text-align: center;
+    color: #fff;
+    padding: 100px 20px;
+    position: relative;
+    z-index: 2; /* Zorgt dat hero-inhoud boven de achtergrond komt */
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+body.aarde .hero {
+    background-image: url('aarde.gif');
+}
+
+body.mars .hero {
+    background-image: url('mars.gif');
+}
+
+body.jupiter .hero {
+    background-image: url('jupiter.gif');
+}
+
+body.venus .hero {
+    background-image: url('venus.gif');
+}
+
+body.mercurius .hero {
+    background-image: url('mercurius.gif');
+}
+
+/* Hero overlay */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(44, 62, 80, 0.7);
+    z-index: 1; /* Zorgt dat overlay tussen achtergrond en inhoud zit */
+}
+
+/* Hero content */
+.hero h1,
+.hero p,
+.hero button {
+    position: relative;
+    z-index: 2; /* Zorgt dat tekst en knoppen boven de overlay komen */
+}
+
+/* Responsiviteit */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .info-blokken {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero {
+        padding: 80px 20px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+}
