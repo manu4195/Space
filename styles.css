@@ -27,7 +27,7 @@ body.mercurius {
 }
 
 body.venus {
-    --primair: #FFC107;
+    --primair: #6b5101;
     --secundair: #FFD54F;
     --accent: #FFA000;
     --achtergrond: #FFF8E1;
@@ -38,7 +38,7 @@ body.venus {
 }
 
 body.aarde {
-    --primair: #2196F3;
+    --primair: #1b6eb2;
     --secundair: #64B5F6;
     --accent: #1976D2;
     --achtergrond: #E3F2FD;

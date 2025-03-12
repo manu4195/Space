@@ -1,84 +1,146 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planeten Website</title>
-    <!-- Voeg Google Fonts toe voor typografie -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Koppel het CSS-bestand -->
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aarde - Planeten Website</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Extra styling voor de bronsectie en de knop (optioneel, kan ook in styles.css) */
+    .bronnen {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 800px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      text-align: left;
+    }
+    .bronnen h2 {
+      text-align: center;
+      margin-bottom: 10px;
+      color: var(--primair);
+    }
+    .bronnen ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      margin: 0;
+    }
+    .bronnen ul li {
+      margin: 8px 0;
+    }
+    button#leesMeerBtn {
+      background-color: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      padding: 15px 30px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    button#leesMeerBtn:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+  </style>
 </head>
 <body class="aarde">
-    <!-- Header en Navigatie -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="aarde-link">Aarde</a></li>
-                <li><a href="jupiter.html" class="jupiter-link">Jupiter</a></li>
-                <li><a href="mercurius.html" class="mercurius-link">Mercurius</a></li>
-                <li><a href="venus.html" class="venus-link">Venus</a></li>
-                <li><a href="mars.html" class="mars-link">Mars</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Hoofdinhoud -->
-    <main>
-        <!-- Hero Sectie -->
-        <section class="hero">
-            <h1>Aarde</h1>
-            <p>De Aarde is de derde planeet vanaf de zon en de enige bekende planeet met leven.</p>
-            <button>Lees meer</button>
-        </section>
-
-        <!-- Info Blokken -->
-        <section class="info-blokken">
-            <div class="info-blok">
-                <h2>Info block 1</h2>
-                <p>Beschrijving van info block 1.</p>
-            </div>
-            <div class="info-blok">
-                <h2>Info block 2</h2>
-                <p>Beschrijving van info block 2.</p>
-            </div>
-            <div class="info-blok">
-                <h2>Info block 3</h2>
-                <p>Beschrijving van info block 3.</p>
-            </div>
-        </section>
-
-        <!-- Laatste Ontdekkingen -->
-        <section class="ontdekkingen">
-            <h2>Laatste ontdekkingen</h2>
-            <div class="ontdekking">
-                <h3>Grote ontdekking</h3>
-                <p>Beschrijving van de grote ontdekking.</p>
-            </div>
-            <div class="prestatie-samenvatting">
-                <h3>Samenvatting prestatie</h3>
-                <p>Beschrijving van de prestatie.</p>
-            </div>
-        </section>
-
-        <!-- Zijbalk met Feitjes -->
-        <aside>
-            <h2>Leuke feitjes</h2>
-            <ul>
-                <li>Feitje 1</li>
-                <li>Feitje 2</li>
-                <li>Feitje 3</li>
-            </ul>
-        </aside>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <button>Meer feitjes laden</button>
-        <small>&copy; 2025 Planeten Website</small>
-    </footer>
-
-    <!-- Voeg eventueel JavaScript toe voor interactiviteit -->
-    <script src="script.js"></script>
+  <!-- Header en Navigatie -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="aarde-link">Aarde</a></li>
+        <li><a href="jupiter.html" class="jupiter-link">Jupiter</a></li>
+        <li><a href="mercurius.html" class="mercurius-link">Mercurius</a></li>
+        <li><a href="venus.html" class="venus-link">Venus</a></li>
+        <li><a href="mars.html" class="mars-link">Mars</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <!-- Hoofdinhoud -->
+  <main>
+    <!-- Hero Sectie -->
+    <section class="hero">
+      <h1>Aarde</h1>
+      <p>Aarde is de derde planeet van de zon en de enige planeet die tot nu toe leven herbergt.</p>
+      <button id="leesMeerBtn">Bronnen</button>
+      <div id="extraInfo" class="bronnen" style="display: none;">
+        <h2>Bronnen</h2>
+        <ul>
+          <li>
+            <a href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html" target="_blank">
+              NASA Planetary Fact Sheet: Earth
+            </a>
+          </li>
+          <li>
+            <a href="https://en.wikipedia.org/wiki/Earth" target="_blank">
+              Wikipedia: Earth
+            </a>
+          </li>
+          <li>
+            <a href="https://solarsystem.nasa.gov/planets/earth/overview/" target="_blank">
+              NASA: Earth Overview
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    
+    <!-- Info Blokken -->
+    <section class="info-blokken">
+      <div class="info-blok">
+        <h2>Afstand tot de Zon</h2>
+        <p>Gemiddeld 149,6 miljoen kilometer.</p>
+      </div>
+      <div class="info-blok">
+        <h2>Rotatie</h2>
+        <p>De Aarde draait in 24 uur om zijn as.</p>
+      </div>
+      <div class="info-blok">
+        <h2>Seizoenen</h2>
+        <p>De schuine as zorgt voor de wisseling van seizoenen.</p>
+      </div>
+    </section>
+    
+    <!-- Sectie voor Ontdekkingen of Extra Inzichten -->
+    <section class="ontdekkingen">
+      <div class="ontdekking">
+        <h2>Ontdekkingen</h2>
+        <p>Onderzoekers ontdekken continu nieuwe inzichten over onze planeet, zoals verborgen oceanen en onverwachte geologische processen.</p>
+      </div>
+    </section>
+    
+    <!-- Zijbalk met Leuke Feitjes -->
+    <aside>
+      <h2>Leuke feitjes over Aarde</h2>
+      <ul>
+        <li>Enige planeet met actieve platentektoniek.</li>
+        <li>Onze maan beïnvloedt de getijdenwerking sterk.</li>
+        <li>Meer dan 70% van het oppervlak is bedekt met water.</li>
+      </ul>
+    </aside>
+  </main>
+  
+  <!-- Footer -->
+  <footer>
+    <button id="meerFeitjesBtn">Meer feitjes laden</button>
+    <small>&copy; 2025 Planeten Website</small>
+  </footer>
+  
+  <!-- JavaScript voor de toggle-functionaliteit van de bronnen -->
+  <script>
+    document.getElementById('leesMeerBtn').addEventListener('click', function() {
+      const extraInfo = document.getElementById('extraInfo');
+      if (extraInfo.style.display === 'none') {
+        extraInfo.style.display = 'block';
+        this.textContent = 'Sluit bronnen';
+      } else {
+        extraInfo.style.display = 'none';
+        this.textContent = 'Bronnen';
+      }
+    });
+  </script>
 </body>
 </html>

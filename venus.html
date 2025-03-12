@@ -1,41 +1,82 @@
 <!DOCTYPE html>
 <html lang="nl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Venus - Planeten Website</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body class="venus">
+  <!-- Header en Navigatie -->
   <header>
     <nav>
       <ul>
-        <li><a href="index.html" class="aarde-link">Aarde</a></li>
-        <li><a href="jupiter.html" class="jupiter-link">Jupiter</a></li>
-        <li><a href="mercurius.html" class="mercurius-link">Mercurius</a></li>
-        <li><a href="venus.html" class="venus-link">Venus</a></li>
-        <li><a href="mars.html" class="mars-link">Mars</a></li>
+        <li><a href="index.html">Aarde</a></li>
+        <li><a href="jupiter.html">Jupiter</a></li>
+        <li><a href="mercurius.html">Mercurius</a></li>
+        <li><a href="venus.html">Venus</a></li>
+        <li><a href="mars.html">Mars</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- Hoofdinhoud -->
   <main>
     <!-- Hero Sectie -->
     <section class="hero">
       <h1>Venus</h1>
-      <p>Venus onderscheidt zich door zijn dichte atmosfeer en verzengende temperaturen.</p>
-      <button>Lees meer</button>
+      <p>Venus, de 'zus van de Aarde', heeft een dikke atmosfeer en ervaart een intens broeikaseffect.</p>
+      <button id="leesMeerBtn">Lees meer</button>
+      <div id="extraInfo" style="display: none;">
+        <p>De atmosfeer bestaat voornamelijk uit koolstofdioxide met wolken van zwavelzuur.</p>
+        <p>Oppervlaktetemperaturen kunnen oplopen tot ongeveer 465°C.</p>
+      </div>
     </section>
 
-    <!-- Voeg hier eventueel meer content toe -->
+    <!-- Info Blokken -->
+    <section class="info-blokken">
+      <div class="info-blok">
+        <h2>Afstand tot de Zon</h2>
+        <p>Ongeveer 108 miljoen kilometer.</p>
+      </div>
+      <div class="info-blok">
+        <h2>Rotatie</h2>
+        <p>Langzame, omgekeerde rotatie: ongeveer 243 dagen.</p>
+      </div>
+      <div class="info-blok">
+        <h2>Oppervlakte</h2>
+        <p>Een vulkanisch landschap met dichte bewolking.</p>
+      </div>
+    </section>
+
+    <!-- Zijbalk met Leuke Feitjes -->
+    <aside>
+      <h2>Leuke feitjes over Venus</h2>
+      <ul>
+        <li>Venus heeft geen natuurlijke satellieten.</li>
+        <li>De atmosferische circulatie draait sneller dan de planeet zelf.</li>
+        <li>Het broeikaseffect is extreem en langdurig.</li>
+      </ul>
+    </aside>
   </main>
 
+  <!-- Footer -->
   <footer>
-    <button>Meer feitjes laden</button>
+    <button id="meerFeitjesBtn">Meer feitjes laden</button>
     <small>&copy; 2025 Planeten Website</small>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    document.getElementById('leesMeerBtn').addEventListener('click', function() {
+      const extraInfo = document.getElementById('extraInfo');
+      if (extraInfo.style.display === 'none') {
+        extraInfo.style.display = 'block';
+        this.textContent = 'Lees minder';
+      } else {
+        extraInfo.style.display = 'none';
+        this.textContent = 'Lees meer';
+      }
+    });
+  </script>
 </body>
 </html>
